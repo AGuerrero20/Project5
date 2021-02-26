@@ -4,9 +4,10 @@ class Main{
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     System.out.println("Welcome to the volume calculator!");
+    //prints final message
     System.out.println("Your cube's volume is " + vol(3, 0, 0, 0));
   }
-
+//initialize most variables
   public static int vol(int n, int length, int height, int width){
     int vol = 0;
     Scanner scan = new Scanner(System.in);
