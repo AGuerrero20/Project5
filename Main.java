@@ -1,33 +1,35 @@
 import java.util.Scanner;
 
-class Main {
+class Main{
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     System.out.println("Welcome to the volume calculator!");
-    sum(3);
+    System.out.println("Your cube's volume is " + vol(3, 0, 0, 0));
   }
 
-  public static void sum(int n){
-  if(n==0){
-    System.out.println("Your volume is " + vol);
-    }if(n==1){
-    System.out.println("Type in the width.");
-    Scanner length = new Scanner(System.in);
-
-    n--;
-    sum();
-    }if(n==2){
-    System.out.println("Type in the height.");
-    Scanner length = new Scanner(System.in);
-
-    n--;
-    sum();
-    }if(n==3){
+  public static int vol(int n, int length, int height, int width){
+    int vol = 0;
+    Scanner scan = new Scanner(System.in);
+  if(n==3){
     System.out.println("Type in the length.");
-    Scanner length = new Scanner(System.in);
+    length = scan.nextInt();
 
     n--;
-    sum();
+    return vol(n, length, 0, 0);
+    }else if(n==2){
+    System.out.println("Type in the height.");
+    height = scan.nextInt();
+
+    n--;
+    return vol(n, length, height, 0);
+    }else if(n==1){
+    System.out.println("Type in the width.");
+    width = scan.nextInt();
+
+    n--;
+    return vol(n, length, height, width);
+    }else{
+    return vol = height * width * length;
     }
   }
 }
